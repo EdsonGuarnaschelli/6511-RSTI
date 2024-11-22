@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- phosphor icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Coffee Delivery</title>
+  </head>
+  <body>
+    <header class="container flex">
+      <img src="assets/logo.svg" alt="coffee delivery" id="logo" />
+      <div class="flex">
+        <button type="button" class="location-btn flex">
+          <i class="ph-fill ph-map-pin"></i>
+          <span>Porto Alegre, RS</span>
+        </button>
+        <button
+          type="button"
+          class="shopping-btn"
+          id="header-shopping-btn"
+          onclick="handleCheckout()"
+        >
+          <i class="ph-fill ph-shopping-cart-simple"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="s-about container flex">
+        <div class="content flex">
+          <h1>Encontre o café perfeito para qualquer hora do dia</h1>
+          <p>
+            Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
+            hora
+          </p>
+
+          <ul class="services">
+            <li>
+              <i class="ph-fill ph-shopping-cart-simple"></i>
+              Compra simples e segura
+            </li>
+            <li>
+              <i class="ph-fill ph-timer"></i>
+              Embalagem mantém o café intacto
+            </li>
+
+            <li>
+              <i class="ph-fill ph-package"></i>
+              Entrega rápida e rastreada
+            </li>
+            <li>
+              <i class="ph-fill ph-coffee"></i>
+              O café chega fresquinho até você
+            </li>
+          </ul>
+        </div>
+
+        <img src="assets/coffe.png" alt="coffee" />
+      </section>
+
+      <section class="s-coffees container">
+        <h1>Nossos cafés</h1>
+
+        <div class="coffee-gallery">
+          <!-- Café Tradicional -->
+          <div class="coffe-card flex" data-id="tradicional">
+            <img src="assets/tradicional.png" alt="café tradicional" />
+            <span class="label">tradicional</span>
+
+            <div class="description">
+              <p class="coffee-name">expresso tradicional</p>
+              <p class="coffee-description">
+                O tradicional café feito com água quente e grãos moídos
+              </p>
+            </div>
+
+            <div class="btn-wrapper flex">
+              <p>R$ <strong>9,90</strong></p>
+
+              <div>
+                <div class="coffee-amount flex">
+                  <button
+                    type="button"
+                    class="decrement-btn amount-btn"
+                    data-id="tradicional"
+                  >
+                    -
+                  </button>
+                  <span id="counter-tradicional" data-id="tradicional">1</span>
+                  <button
+                    type="button"
+                    class="increment-btn amount-btn"
+                    data-id="tradicional"
+                  >
+                    +
+                  </button>
+                </div>
+                <button type="button" class="shopping-btn">
+                  <i class="ph-fill ph-shopping-cart-simple"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Café Americano -->
+          <div class="coffe-card flex" data-id="americano">
+            <img src="assets/americano.png" alt="café expresso americano" />
+            <span class="label">tradicional</span>
+
+            <div class="description">
+              <p class="coffee-name">expresso americano</p>
+              <p class="coffee-description">
+                Expresso diluído, menos intenso que o tradicional
+              </p>
+            </div>
+
+            <div class="btn-wrapper flex">
+              <p>R$ <strong>9,90</strong></p>
+
+              <div>
+                <div class="coffee-amount flex">
+                  <button
+                    type="button"
+                    class="decrement-btn amount-btn"
+                    data-id="americano"
+                  >
+                    -
+                  </button>
+                  <span id="counter-americano" data-id="americano">1</span>
+                  <button
+                    type="button"
+                    class="increment-btn amount-btn"
+                    data-id="americano"
+                  >
+                    +
+                  </button>
+                </div>
+                <button type="button" class="shopping-btn">
+                  <i class="ph-fill ph-shopping-cart-simple"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Café Expresso Cremoso -->
+          <div class="coffe-card flex" data-id="cremoso">
+            <img
+              src="assets/expresso-cremoso.png"
+              alt="café expresso cremoso"
+            />
+            <span class="label">tradicional</span>
+
+            <div class="description">
+              <p class="coffee-name">expresso cremoso</p>
+              <p class="coffee-description">
+                Café expresso tradicional com espuma cremosa
+              </p>
+            </div>
+
+            <div class="btn-wrapper flex">
+              <p>R$ <strong>9,90</strong></p>
+
+              <div>
+                <div class="coffee-amount flex">
+                  <button
+                    type="button"
+                    class="decrement-btn amount-btn"
+                    data-id="cremoso"
+                  >
+                    -
+                  </button>
+                  <span id="counter-cremoso" data-id="cremoso">1</span>
+                  <button
+                    type="button"
+                    class="increment-btn amount-btn"
+                    data-id="cremoso"
+                  >
+                    +
+                  </button>
+                </div>
+                <button type="button" class="shopping-btn">
+                  <i class="ph-fill ph-shopping-cart-simple"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Café Expresso Gelado -->
+          <div class="coffe-card flex" data-id="gelado">
+            <img src="assets/gelado.png" alt="Café expresso gelado" />
+            <div class="label-wrapper flex">
+              <span class="label">tradicional</span>
+              <span class="label">gelado</span>
+            </div>
+          
+            <div class="description">
+              <p class="coffee-name">Expresso gelado</p>
+              <p class="coffee-description">
+                Bebida preparada com café expresso e cubos de gelo.
+              </p>
+            </div>
+          
+            <div class="btn-wrapper flex">
+              <p>R$ <strong>9,90</strong></p>
+          
+              <div>
+                <div class="coffee-amount flex">
+                  <button
+                    type="button"
+                    class="decrement-btn amount-btn"
+                    data-id="gelado"
+                  >
+                    -
+                  </button>
+                  <span id="counter-gelado" data-id="gelado">1</span>
+                  <button
+                    type="button"
+                    class="increment-btn amount-btn"
+                    data-id="gelado"
+                  >
+                    +
+                  </button>
+                </div>
+                <button type="button" class="shopping-btn">
+                  <i class="ph-fill ph-shopping-cart-simple"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- Café com leite -->
+          <div class="coffe-card flex" data-id="comLeite">
+            <img src="assets/cafe-com-leite.png" alt="Café com leite" />
+            <span class="label">tradicional</span>
+          
+            <div class="description">
+              <p class="coffee-name">Café com leite</p>
+              <p class="coffee-description">
+                Meio a meio de expresso tradicional com leite vaporizado.
+              </p>
+            </div>
+          
+            <div class="btn-wrapper flex">
+              <p>R$ <strong>9,90</strong></p>
+          
+              <div>
+                <div class="coffee-amount flex">
+                  <button
+                    type="button"
+                    class="decrement-btn amount-btn"
+                    data-id="comLeite"
+                  >
+                    -
+                  </button>
+                  <span id="counter-comLeite" data-id="comLeite">1</span>
+                  <button
+                    type="button"
+                    class="increment-btn amount-btn"
+                    data-id="comLeite"
+                  >
+                    +
+                  </button>
+                </div>
+                <button type="button" class="shopping-btn">
+                  <i class="ph-fill ph-shopping-cart-simple"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- Latte -->
+          <div class="coffe-card flex" data-id="latte">
+            <img src="assets/latte.png" alt="Latte" />
+            <span class="label">tradicional</span>
+          
+            <div class="description">
+              <p class="coffee-name">Latte</p>
+              <p class="coffee-description">
+                Uma dose de café expresso com o dobro de leite e espuma cremosa.
+              </p>
+            </div>
+          
+            <div class="btn-wrapper flex">
+              <p>R$ <strong>9,90</strong></p>
+          
+              <div>
+                <div class="coffee-amount flex">
+                  <button
+                    type="button"
+                    class="decrement-btn amount-btn"
+                    data-id="latte"
+                  >
+                    -
+                  </button>
+                  <span id="counter-latte" data-id="latte">1</span>
+                  <button
+                    type="button"
+                    class="increment-btn amount-btn"
+                    data-id="latte"
+                  >
+                    +
+                  </button>
+                </div>
+                <button type="button" class="shopping-btn">
+                  <i class="ph-fill ph-shopping-cart-simple"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+
+<!-- Capuccino -->
+<div class="coffe-card flex" data-id="cappuccino">
+  <img src="assets/cappuccino.png" alt="Cappuccino" />
+  <span class="label">tradicional</span>
+
+  <div class="description">
+    <p class="coffee-name">Cappuccino</p>
+    <p class="coffee-description">
+      Bebida com canela feita de doses iguais de café, leite e espuma.
+    </p>
+  </div>
+
+  <div class="btn-wrapper flex">
+    <p>R$ <strong>9,90</strong></p>
+
+    <div>
+      <div class="coffee-amount flex">
+        <button
+          type="button"
+          class="decrement-btn amount-btn"
+          data-id="cappuccino"
+        >
+          -
+        </button>
+        <span id="counter-cappuccino" data-id="cappuccino">1</span>
+        <button
+          type="button"
+          class="increment-btn amount-btn"
+          data-id="cappuccino"
+        >
+          +
+        </button>
+      </div>
+      <button type="button" class="shopping-btn">
+        <i class="ph-fill ph-shopping-cart-simple"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+         <!-- machiatto  -->
+         <div class="coffe-card flex" data-id="macchiato">
+          <img src="assets/macchiato.png" alt="machiatto" />
+          <div class="label-wrapper flex">
+            <span class="label">tradicional</span>
+          </div>
+        
+          <div class="description">
+            <p class="coffee-name">macchiato</p>
+            <p class="coffee-description">
+              Café expresso misturado com um pouco de leite quente e espuma.
+            </p>
+          </div>
+        
+          <div class="btn-wrapper flex">
+            <p>R$ <strong>9,90</strong></p>
+        
+            <div>
+              <div class="coffee-amount flex">
+                <button
+                  type="button"
+                  class="decrement-btn amount-btn"
+                  data-id="macchiato"
+                >
+                  -
+                </button>
+                <span id="counter-macchiato" data-id="macchiato">1</span>
+                <button
+                  type="button"
+                  class="increment-btn amount-btn"
+                  data-id="macchiato"
+                >
+                  +
+                </button>
+              </div>
+              <button type="button" class="shopping-btn">
+                <i class="ph-fill ph-shopping-cart-simple"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+
+<!-- mochaccino  -->
+<div class="coffe-card flex" data-id="mochaccino">
+  <img src="assets/mochaccino.png" alt="Café mochaccino" />
+  <div class="label-wrapper flex">
+    <span class="label">tradicional</span>
+  </div>
+
+  <div class="description">
+    <p class="coffee-name">Mochaccino</p>
+    <p class="coffee-description">
+      Café expresso com calda de chocolate, pouco leite e espuma
+    </p>
+  </div>
+
+  <div class="btn-wrapper flex">
+    <p>R$ <strong>9,90</strong></p>
+
+    <div>
+      <div class="coffee-amount flex">
+        <button
+          type="button"
+          class="decrement-btn amount-btn"
+          data-id="mochaccino"
+        >
+          -
+        </button>
+        <span id="counter-mochaccino" data-id="mochaccino">1</span>
+        <button
+          type="button"
+          class="increment-btn amount-btn"
+          data-id="mochaccino"
+        >
+          +
+        </button>
+      </div>
+      <button type="button" class="shopping-btn">
+        <i class="ph-fill ph-shopping-cart-simple"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+  <!-- chocolate quente  -->
+  <div class="coffe-card flex" data-id="chocolate-quente">
+    <img src="assets/chocolate-quente.png" alt="Chocolate quente" />
+    <div class="label-wrapper flex">
+      <span class="label">especial</span>
+    </div>
+  
+    <div class="description">
+      <p class="coffee-name">Chocolate Quente</p>
+      <p class="coffee-description">
+        Bebida feita com chocolate dissolvido no leite quente e café
+      </p>
+    </div>
+  
+    <div class="btn-wrapper flex">
+      <p>R$ <strong>9,90</strong></p>
+  
+      <div>
+        <div class="coffee-amount flex">
+          <button
+            type="button"
+            class="decrement-btn amount-btn"
+            data-id="chocolate-quente"
+          >
+            -
+          </button>
+          <span id="counter-chocolate-quente" data-id="chocolate-quente">1</span>
+          <button
+            type="button"
+            class="increment-btn amount-btn"
+            data-id="chocolate-quente"
+          >
+            +
+          </button>
+        </div>
+        <button type="button" class="shopping-btn">
+          <i class="ph-fill ph-shopping-cart-simple"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+ <!-- cubano  -->
+ <div class="coffe-card flex" data-id="cubano">
+  <img src="assets/cubano.png" alt="Cubano" />
+  <div class="label-wrapper flex">
+    <span class="label">especial</span>
+    <span class="label">alcólico</span>
+    <span class="label">gelado</span>
+  </div>
+
+  <div class="description">
+    <p class="coffee-name">Cubano</p>
+    <p class="coffee-description">
+      Drink gelado de café expresso com rum, creme de leite e hortelã
+    </p>
+  </div>
+
+  <div class="btn-wrapper flex">
+    <p>R$ <strong>9,90</strong></p>
+
+    <div>
+      <div class="coffee-amount flex">
+        <button
+          type="button"
+          class="decrement-btn amount-btn"
+          data-id="cubano"
+        >
+          -
+        </button>
+        <span id="counter-cubano" data-id="cubano">1</span>
+        <button
+          type="button"
+          class="increment-btn amount-btn"
+          data-id="cubano"
+        >
+          +
+        </button>
+      </div>
+      <button type="button" class="shopping-btn">
+        <i class="ph-fill ph-shopping-cart-simple"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+             <!-- havaiano -->
+             <div class="coffe-card flex" data-id="havaiano">
+              <img src="assets/havaiano.png" alt="Café havaiano" />
+              <span class="label">especial</span>
+            
+              <div class="description">
+                <p class="coffee-name">havaiano</p>
+                <p class="coffee-description">
+                  Bebida adocicada preparada com café e leite de coco
+                </p>
+              </div>
+            
+              <div class="btn-wrapper flex">
+                <p>R$ <strong>9,90</strong></p>
+            
+                <div>
+                  <div class="coffee-amount flex">
+                    <button
+                      type="button"
+                      class="decrement-btn amount-btn"
+                      data-id="havaiano"
+                    >
+                      -
+                    </button>
+                    <span id="counter-havaiano" data-id="havaiano">1</span>
+                    <button
+                      type="button"
+                      class="increment-btn amount-btn"
+                      data-id="havaiano"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button type="button" class="shopping-btn">
+                    <i class="ph-fill ph-shopping-cart-simple"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+
+          <!-- arabe -->
+          <div class="coffe-card flex" data-id="arabe">
+            <img src="assets/arabe.png" alt="Café árabe" />
+            <span class="label">especial</span>
+          
+            <div class="description">
+              <p class="coffee-name">árabe</p>
+              <p class="coffee-description">
+                Bebida preparada com grãos de café árabe e especiarias
+              </p>
+            </div>
+          
+            <div class="btn-wrapper flex">
+              <p>R$ <strong>9,90</strong></p>
+          
+              <div>
+                <div class="coffee-amount flex">
+                  <button
+                    type="button"
+                    class="decrement-btn amount-btn"
+                    data-id="arabe"
+                  >
+                    -
+                  </button>
+                  <span id="counter-arabe" data-id="arabe">1</span>
+                  <button
+                    type="button"
+                    class="increment-btn amount-btn"
+                    data-id="arabe"
+                  >
+                    +
+                  </button>
+                </div>
+                <button type="button" class="shopping-btn">
+                  <i class="ph-fill ph-shopping-cart-simple"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+
+<!-- irlandês -->
+  
+  <div class="coffe-card flex" data-id="irlandes">
+    <img src="assets/irlandes.png" alt="Café irlandês" />
+    <span class="label">especial</span>
+  
+    <div class="description">
+      <p class="coffee-name">irlandes</p>
+      <p class="coffee-description">
+        Bebida a base de café, uísque irlandês, açúcar e chantilly
+      </p>
+    </div>
+  
+    <div class="btn-wrapper flex">
+      <p>R$ <strong>9,90</strong></p>
+  
+      <div>
+        <div class="coffee-amount flex">
+          <button
+            type="button"
+            class="decrement-btn amount-btn"
+            data-id="irlandes"
+          >
+            -
+          </button>
+          <span id="counter-irlandes" data-id="irlandes">1</span>
+          <button
+            type="button"
+            class="increment-btn amount-btn"
+            data-id="irlandes"
+          >
+            +
+          </button>
+        </div>
+        <button type="button" class="shopping-btn">
+          <i class="ph-fill ph-shopping-cart-simple"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+      </section>
+    </main>
+
+
+    <script src="./main.js"></script>
+    <script src="order.js"></script>
+  </body>
+</html>
