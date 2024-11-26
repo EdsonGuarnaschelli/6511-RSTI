@@ -244,3 +244,7 @@ hr {
   text-align: center;
   text-transform: uppercase;
 }
+
+input {
+  font-size: 12px;
+}
