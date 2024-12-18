@@ -14,16 +14,12 @@
 
 async function fetchProducts() {
   try {
-    const response = await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({ json: () => mockProducts });
-      }, 1000); // 1 segundo
-    });
-    const data = await response.json();
-
-    renderProducts(data);
+    const response = await axios.get("https://dummyjson.com/products");
+    const data = response.data;
+    renderProducts(data.products);
   } catch (error) {
-    console.error("Erro ao buscar os produtos: ", error);
+    console.error("Erro ao buscar os produtos, usando dados mockados: ", error);
+    renderProducts(mockProducts);
   }
 }
 
@@ -36,29 +32,27 @@ function renderProducts(products) {
     productCard.classList.add("product-card");
 
     productCard.innerHTML = `
-    <div class="product-card">
-      <div class="product-img">
-        <img
-          src="${product.thumbnail || "default-image.jpg"}"
-          alt="${product.title}"
-        />
-      </div>
-
-      <ul class="rating">
-        ${generateStars(product.rating)}
-         Reviews <span>(${
-           typeof product.reviews === "number"
-             ? product.reviews
-             : product.reviews.length
-         })</span>
-      </ul>
-
-      <p class="product-name">
-       ${product.title}
-      </p>
-      <strong class="product-price">${product.price}</strong>
-    </div>
-    `;
+          <div class="product-img">
+            <img
+              src="${product.thumbnail || "default-image.jpg"}"
+              alt="${product.title}"
+            />
+          </div>
+    
+          <ul class="rating">
+            ${generateStars(product.rating)}
+             Reviews <span>(${
+               typeof product.reviews === "number"
+                 ? product.reviews
+                 : product.reviews.length
+             })</span>
+          </ul>
+    
+          <p class="product-name">
+           ${product.title}
+          </p>
+          <strong class="product-price">${product.price}</strong>
+        `;
 
     productGrid.appendChild(productCard);
   });
@@ -70,18 +64,18 @@ function generateStars(rating) {
   const emptyStars = 5 - fullStars - halfStar;
 
   return `
-   ${'<li><img src="assets/fill-star.svg" alt="fill star icon" /></li>'.repeat(
-     fullStars
-   )}
-   ${
-     halfStar
-       ? '<li><img src="assets/half-star.svg" alt="half star icon" /></li>'
-       : ""
-   } 
-    ${'<li><img src="assets/star.svg" alt="empety star icon" /></li>'.repeat(
-      emptyStars
-    )}
-  `;
+       ${'<li><img src="assets/fill-star.svg" alt="fill star icon" /></li>'.repeat(
+         fullStars
+       )}
+       ${
+         halfStar
+           ? '<li><img src="assets/half-star.svg" alt="half star icon" /></li>'
+           : ""
+       } 
+        ${'<li><img src="assets/star.svg" alt="empty star icon" /></li>'.repeat(
+          emptyStars
+        )}
+      `;
 }
 
 document.addEventListener("DOMContentLoaded", fetchProducts);

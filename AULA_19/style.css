@@ -33,6 +33,7 @@ header {
 header nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 header nav ul {
@@ -71,7 +72,8 @@ header nav ul {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .product-card {

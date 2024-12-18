@@ -24,7 +24,7 @@ const mockProducts = [
     category: "Networking Device",
     title: "TP-Link Archer AX11000 Tri-Band Wi-Fi Router",
     thumbnail:
-      "https://images.unsplash.com/photo-1583508915901-b5f4d94aab9c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://m.media-amazon.com/images/I/61-50f0Z7iL._AC_SL1500_.jpg",
     rating: 5,
     reviews: 12,
     price: "R$299.99",
@@ -34,7 +34,7 @@ const mockProducts = [
     category: "Printers & Scanners",
     title: "Canon PIXMA G7020 Wireless Printer",
     thumbnail:
-      "https://images.unsplash.com/photo-1600180758895-cf03c5cc6c12?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://m.media-amazon.com/images/I/61GItOdtlBL._AC_SL1500_.jpg",
     rating: 3,
     reviews: 7,
     price: "R$199.00",
@@ -44,7 +44,7 @@ const mockProducts = [
     category: "PC Parts",
     title: "Corsair Vengeance LPX 16GB DDR4 RAM",
     thumbnail:
-      "https://images.unsplash.com/photo-1555618467-3638f3b9c9c2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://m.media-amazon.com/images/I/71ecOJDxBSS._AC_SL1500_.jpg",
     rating: 4,
     reviews: 15,
     price: "R$89.99",
@@ -54,7 +54,7 @@ const mockProducts = [
     category: "All Other Products",
     title: "Logitech MX Master 3 Advanced Wireless Mouse",
     thumbnail:
-      "https://images.unsplash.com/photo-1604152135912-04a52962f98a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://m.media-amazon.com/images/I/61zkMRx+mpL._AC_SL1500_.jpg",
     rating: 5,
     reviews: 25,
     price: "R$99.99",
